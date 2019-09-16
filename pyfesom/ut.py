@@ -77,7 +77,7 @@ def scalar_r2g(al, be, ga, rlon, rlat):
     lon=  np.arctan2(yg, xg)
     
     a = np.where((np.abs(xg)+np.abs(yg))==0)
-    if a: lon[a]=0
+    if any(map(len,a)): lon[a]=0
     
     lat = lat/rad
     lon = lon/rad
